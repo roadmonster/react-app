@@ -2,7 +2,7 @@ import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, removeFromCart, clearCart } = useCart();
+  const { cart, removeFromCart, clearCart, updateQuantity, getTotal } = useCart();
 
   if (cart.length === 0) {
     return (
@@ -22,10 +22,16 @@ const Cart = () => {
             <img src={item.image} alt={item.title} style={{ width: '100px' }} />
             <h3>{item.title}</h3>
             <p>${item.price}</p>
+            <div style={{display: 'flex', alignItems: 'center'}}>
+                <button onClick={() => updateQuantity(item.id, -1)}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+            </div>
             <button onClick={() => removeFromCart(item.id)}>Remove</button>
           </li>
         ))}
       </ul>
+      <h3>Grand Total: ${getTotal().toFixed(2)}</h3>
       <button onClick={clearCart}>Clear Cart</button>
     </div>
   );
