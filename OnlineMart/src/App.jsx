@@ -5,10 +5,10 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
-
+import { CartProvider } from './context/CartContext';
 function App() {
   return (
-    <>
+    <CartProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path='/cart' element={<Cart />}/>
         </Routes>
       </Router>
-    </>
+    </CartProvider>
   )
 }
 
