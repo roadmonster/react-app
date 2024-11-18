@@ -10,5 +10,10 @@
 6. Add products to shopping cart.
 7. User should be able to nav between homepage and each individual item page, and the shopping cart page and finally submit the order. 
 
+This app is currently using the reqres.in fake login api for dev purpose
+Please use credentials below
+username: eve.holt@reqres.in 
+password: cityslicka
+for temporary login test purpose.
 
 
