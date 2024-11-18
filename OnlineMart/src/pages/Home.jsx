@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
+import '../css/Home.css'
 
 const Home = () => {
 
@@ -15,7 +16,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className='home-container'>
             <h1>Products</h1>
             <div className='product-grid'>
                 {products.map(product => (<ProductCard key={product.id} product={product}/>
